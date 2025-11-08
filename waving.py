@@ -19,7 +19,7 @@ def interval_to_ms(interval):
     raise ValueError("Неизвестный формат интервала")
 
 
-def fetch_klines(symbol="BTCUSDT", interval="1", category="spot", limit=1, end=None):
+def fetch_klines(symbol="ETHUSDT", interval="1", category="spot", limit=1, end=None):
     base_url = BASE_URL + KLINE_ENDPOINT
     params = {
         "category": category,
@@ -37,7 +37,7 @@ def fetch_klines(symbol="BTCUSDT", interval="1", category="spot", limit=1, end=N
     return data.get("result").get("list")
 
 
-def fetch_and_bars(symbol="BTCUSDT", interval="1", category="spot", n=1):
+def fetch_and_bars(symbol="ETHUSDT", interval="1", category="spot", n=1):
     bars = []
     needed = int(n)
     h2o = 1000 if needed > 1000 else needed
@@ -93,3 +93,4 @@ if __name__ == '__main__':
     print(df['rsi20'])
     print(df['ema20'])
     print(df['sma20'])
+    df.to_csv('ethereal.csv')
