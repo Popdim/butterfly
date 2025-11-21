@@ -16,3 +16,5 @@ if response.get('retCode') != 0:
 else:
     candel = response.get("result").get("list")
     print(f'{candel[0][4]}usdt')
+
+
