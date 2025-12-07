@@ -17,7 +17,6 @@ def get_today_utc_close():
     start_minutes_day = (now_utc.replace(second=0, microsecond=0, hour=0, minute=0))
     return utc_ms(start_minutes_day), utc_ms(last_close_minute)
 
-
 if __name__ == '__main__':
     h2h = get_today_utc_close()
     print(h2h)

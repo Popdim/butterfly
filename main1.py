@@ -25,12 +25,12 @@ def fetch_klines_pybit(start_ms, end_ms, symbol="BTCUSDT", interval="1", categor
         raise RuntimeError(f"ошибка от bybit {response.get('retMsg')}")
     rows = response.get("result").get("list")
     print(rows)
-    df = pd.DataFrame(rows, columns=["start", "open", "hype", "low", "close", "volume", "turnover"])
+    df = pd.DataFrame(rows, columns=["start", "open", "high", "low", "close", "volume", "turnover"])
     print(df)
     df = df.astype({
         "start": "int64",
         "open": "float64",
-        "hype": "float64",
+        "high": "float64",
         "low": "float64",
         "close": "float64",
         "volume": "float64",
